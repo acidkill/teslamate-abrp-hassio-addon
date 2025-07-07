@@ -1,0 +1,42 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: teslamate-abrp-hassio-addon
+version: "1.2.0"
+slug: teslamate-abrp-hassio-addon
+description: Integrate teslamate-abrp-hassio-addon with Home Assistant
+url: "https://github.com/jer0enA/teslamate-abrp-hassio-addon"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+init: false
+map:
+  - share:rw
+options:
+  USER_TOKEN: ""
+  CAR_NUMBER: 1
+  MQTT_SERVER: ""
+  MQTT_USERNAME: ""
+  MQTT_PASSWORD: ""
+  MQTT_PORT: 1883
+  CAR_MODEL: ""
+  STATUS_TOPIC: ""
+  TM2ABRP_DEBUG: false
+  MQTT_TLS: false
+  MQTT_VERIFY_CERT: true
+  SKIP_LOCATION: false
+schema:
+  USER_TOKEN: str
+  CAR_NUMBER: int
+  MQTT_SERVER: str
+  MQTT_USERNAME: str?
+  MQTT_PASSWORD: str?
+  MQTT_PORT: int
+  CAR_MODEL: str?
+  STATUS_TOPIC: str?
+  TM2ABRP_DEBUG: bool
+  MQTT_TLS: bool
+  MQTT_VERIFY_CERT: bool
+  SKIP_LOCATION: bool
+image: "ghcr.io/jer0enA/{arch}-addon-teslamate-abrp-hassio-addon"

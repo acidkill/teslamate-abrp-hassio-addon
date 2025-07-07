@@ -1,6 +1,6 @@
-# Home Assistant Add-on: Example add-on
+# Home Assistant Add-on: teslamate-abrp-hassio-addon
 
-_Example add-on to use as a blueprint for new add-ons._
+Integrate [teslamate-abrp-hassio-addon](https://github.com/jer0enA/teslamate-abrp-hassio-addon) with Home Assistant.
 
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
