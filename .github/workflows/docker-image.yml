@@ -7,12 +7,17 @@ on:
     branches: [ "poc" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - uses: actions/checkout@v4
+
+      - name: Debug - list files
+        run: |
+          echo "PWD: $(pwd)"
+          ls -la
+          find . -maxdepth 3 -type f -name Dockerfile || true
+
+      - name: Build the Docker image
+        working-directory: teslamate-abrp-hassio-addon
+        run: docker build . --tag my-image-name:$(date +%s)
