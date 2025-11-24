@@ -17,7 +17,14 @@ jobs:
           echo "PWD: $(pwd)"
           ls -la
           find . -maxdepth 3 -type f -name Dockerfile || true
+          
+      - name: Set BUILD_FROM
+         run: echo "BUILD_FROM=debian:bullseye-slim" >> $GITHUB_ENV
 
+      - name: Build the Docker image
+         working-directory: teslamate-abrp-hassio-addon
+         
+  run: docker build . --tag my-image-name:$(date +%s)
       - name: Build the Docker image
         working-directory: teslamate-abrp-hassio-addon
         run: docker build . --tag my-image-name:$(date +%s)
